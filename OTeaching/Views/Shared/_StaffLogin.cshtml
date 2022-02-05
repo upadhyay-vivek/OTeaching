@@ -1,0 +1,88 @@
+﻿<table class="tbl">
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"
+            style="color: #003399; font-weight: 700; font-size: large; text-align: center; font-family: 'Courier New', Courier, monospace; border-bottom-style: solid; border-bottom-width: thin; border-bottom-color: #369;">
+            Student Login Area
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="form-group">
+                <label for="txtxstuuname">Login Name :</label>
+                <input type="text" class="form-control" id="txtxstuuname"  placeholder="Enter Login name">
+                @*<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>*@
+            </div>
+        </td>
+        @*<td class="lbl">
+            Login Name :
+        </td>
+        <td>
+            <input type="text" name="txtxstuuname" id="txtxstuuname" class="txt" />
+        </td>*@
+    </tr>
+    <tr>
+        @*<td class="lbl">
+            Password :
+        </td>
+        <td>
+            <input type="password" name="txtxstuuname" id="txtxstuuname" class="txt" />
+        </td>*@
+        <td colspan="2">
+            <div class="form-group">
+                <label for="txtstaffpass">Password :</label>
+                <input type="password" class="form-control" id="txtstaffpass" placeholder="Enter Password">
+                @*<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>*@
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            <input type="button" ID="btnstulogin" CssClass="form-control btn" value="Login" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            @Html.ActionLink("Forgot Password?", "ForgotPassword", "Staff")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            <asp:Label ID="lblstudent" runat="server"></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+   
+</table>
+

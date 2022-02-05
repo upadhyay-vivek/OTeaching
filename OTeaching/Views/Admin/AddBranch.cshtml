@@ -1,0 +1,46 @@
+﻿@model OTeaching.Models.CategoryViewModel
+@{
+    //Layout = "_AdminLayout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddBranch</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-sm-3">
+
+        </div>
+        <div class="col col-sm-6">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group row">
+                    <label for="txtName" class="col-sm-4 col-form-label">Enter Branch</label>
+                    <div class="col-sm-6">
+                        @*<input type="text" class="form-control" id="txtEmail" placeholder="Email">*@
+                        @Html.TextBoxFor(x => x.CName, new { @class = "form-control" })
+                    </div>
+                    <div class="col col-sm-2">
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </div>
+                </div>
+                
+            }
+        </div>
+        <div class="col col-sm-3">
+
+        </div>
+    </div>
+    <div>
+        <div class="col col-sm-3">
+
+        </div>
+        <div class="col col-sm-6">
+            @Html.Action("ListBranch","Admin")
+        </div>
+        <div class="col col-sm-3">
+
+        </div>
+    </div>
+</div>
+

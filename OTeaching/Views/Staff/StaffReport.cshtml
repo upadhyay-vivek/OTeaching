@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OTeaching.Models.StaffViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "StaffReport";
+}
+
+<h2>STAFF REPORTS -</h2>
+<hr />
+
+@if (Model.Count() > 0)
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">Staff Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Qualification</th>
+            <th scope="col">Experiance</th>
+            <th scope="col">City</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var staff in Model)
+        {
+            <tr>
+                <td scope="row">@staff.Image</td>
+                <td>@staff.Name</td>
+                <td>@staff.CName</td>
+                <td>@staff.Qualification</td>
+                <td>@staff.Experience</td>
+                <td>@staff.City</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+else
+{
+    <h3>There is no record found.</h3>
+}

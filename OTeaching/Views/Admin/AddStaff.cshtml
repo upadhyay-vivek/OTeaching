@@ -1,0 +1,147 @@
+﻿@model OTeaching.Models.StaffViewModel
+@{
+    ViewBag.Title = "AddStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddStaff</h2>
+@using (Html.BeginForm())
+{
+
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Name</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Mobile</label>
+                    @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control", placeholder = "Mobile" })
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">Address</label>
+                    @Html.TextAreaFor(x => x.Address, new { @class = "form-control", placeholder = "Address", cols = "30" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">City</label>
+                    @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "City" })
+
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Pincode</label>
+                    @Html.TextBoxFor(x => x.Pincode, new { @class = "form-control", placeholder = "Pincode" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Education</label>
+                    @Html.TextBoxFor(x => x.Qualification, new { @class = "form-control", placeholder = "Education" })
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Experience</label>
+                    @Html.TextBoxFor(x => x.Experience, new { @class = "form-control", placeholder = "Experience" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Branch</label>
+                    @Html.DropDownListFor(x => x.CName, (IEnumerable<SelectListItem>)ViewBag.Branches, new { @class = "form-control" })
+                    @*@Html.TextBoxFor(x => x.CName, new { @class = "form-control", placeholder = "Branch" })*@
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Image</label>
+                    <input type="file" name="ImageFile" value="" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Email</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email" })
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Password</label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "Password" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Confirm Password</label>
+                    @Html.TextBoxFor(x => x.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <input type="submit"  name="name" value="Sumbit" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+}
+

@@ -1,0 +1,53 @@
+﻿@model OTeaching.Models.FeedbackViewModel
+@{
+    ViewBag.Title = "AddFeedback";
+}
+
+<h2>AddFeedback</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    <div class="form-group row">
+        <label for="txtName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            @*<input type="text" class="form-control" id="txtName" placeholder="Name">*@
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtName" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            @*<input type="text" class="form-control" id="txtEmail" placeholder="Email">*@
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtMobile" class="col-sm-2 col-form-label">Mobile</label>
+        <div class="col-sm-10">
+            @*<input type="text" class="form-control" id="txtMobile" placeholder="Mobile">*@
+            @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtMobile" class="col-sm-2 col-form-label">Feedback</label>
+        <div class="col-sm-10">
+            @*<textarea class="form-control" id="txtFeedback" rows="3" placeholder="Enter your feedback"></textarea>*@
+            @Html.TextAreaFor(x => x.FeedbackText, new { @class = "form-control", row = "3" })
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    <br /><br />
+ if (Model != null)
+    {
+        if (ViewBag.Status == 1)
+        {
+            <span style="color:green">Thanks for your feedback !!</span>
+        }
+        else
+        {
+            <span style="color:#951111">Something went wrong !!</span>
+        }
+    }
+}
+
+
