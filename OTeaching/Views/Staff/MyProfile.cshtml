@@ -1,0 +1,147 @@
+﻿@model OTeaching.Models.StaffViewModel
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_StaffLayout.cshtml";
+    var imagePath = "/Uploads/Profile/" + Model.Image;
+}
+
+<h2>MyProfile</h2>
+<hr/>
+
+<div>
+
+</div>
+<div>
+    @Html.Hidden("SID",Model.SID)
+    <table style="width:100%">
+        <tr>
+            <td style="width:60%">
+                @using (Html.BeginForm("MyProfile", "Staff", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                        </div>
+                        <div class="col col-sm-8">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Email</label>
+                                    <label class="form-control">@Model.Email</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Mobile</label>
+                                    @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control", placeholder = "Mobile" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-sm-2">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                        </div>
+                        <div class="col col-sm-8">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputAddress">Address</label>
+                                    @Html.TextAreaFor(x => x.Address, new { @class = "form-control", placeholder = "Address", cols = "30" })
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">City</label>
+                                    @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "City" })
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-sm-2">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                        </div>
+                        <div class="col col-sm-8">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Pincode</label>
+                                    @Html.TextBoxFor(x => x.Pincode, new { @class = "form-control", placeholder = "Pincode" })
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Image</label>
+                                    <input type="file" name="ImageFile" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-sm-2">
+
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                        </div>
+                        <div class="col col-sm-8">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="submit" name="name" value="Update" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-sm-2">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                        </div>
+                        <div class="col col-sm-8">
+                            <div class="form-row">
+                                <br /><br />
+                                <div class="form-group col-md-6">
+                                    @if (!string.IsNullOrEmpty(ViewBag.Message))
+                                    {
+                                        <span style="color:green;font-weight:bold">@ViewBag.Message</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-sm-2">
+
+                        </div>
+                    </div>
+                }
+
+
+            </td>
+            <td style="width:40%">
+                <table style="width:100%">
+
+                    <tr>
+                        <td>
+                            <img src="@imagePath" Name="ImageFile"  alt="Alternate Text" style="height:125px;width:112px" />
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            @*<input type="file" id="fileImage" class="form-control"/><button id="btnPreview" class="btn btn-primary">Preview</button>*@
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</div>
+@*<script>
+    $('#btnPreview').click(function () {
+        var url = $('#fileImage').val();
+        $('#profilePhoto').attr("src", url);
+    });
+</script>*@

@@ -23,5 +23,22 @@ namespace OTeaching.Repositories
             }
             return null;
         }
+
+        public List<Feedback> GetAllFeedbacks()
+        {
+            return _oTeachingContext.Feedbacks.ToList();
+        }
+
+        internal int DeleteFeedback(int fid)
+        {
+            var feedback = _oTeachingContext.Feedbacks.Where(x => x.FID == fid).FirstOrDefault();
+            _oTeachingContext.Feedbacks.Remove(feedback);
+            var result = _oTeachingContext.SaveChanges();
+            if (result>0)
+            {
+                return result;
+            }
+            return 0;
+        }
     }
 }

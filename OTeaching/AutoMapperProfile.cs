@@ -17,6 +17,8 @@ namespace OTeaching
             CreateMap<FeedbackViewModel, Feedback>();
             CreateMap<Category,CategoryViewModel>();
             CreateMap<CategoryViewModel, Category>();
+            CreateMap<User, UserViewModel>();
+            CreateMap<UserViewModel, User>();
         }
     }
 }

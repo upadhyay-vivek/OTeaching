@@ -5,7 +5,7 @@
 }
 
 <h2>AddStaff</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm("AddStaff", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     <div class="row">
@@ -136,9 +136,30 @@
         </div>
         <div class="col col-sm-8">
             <div class="form-row">
-                <input type="submit"  name="name" value="Sumbit" class="btn btn-primary" />
+                <div class="form-group col-md-6">
+                    <input type="submit" name="name" value="Sumbit" class="btn btn-primary" />
+                </div>
             </div>
         </div>
+        <div class="col col-sm-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-2">
+
+        </div>
+        <div class="col col-sm-8">
+            <div class="form-row">
+                <br /><br />
+                <div class="form-group col-md-6">
+                    @if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <span style="color:green;font-weight:bold">@ViewBag.Message</span>
+                    }
+                </div>
+                </div>
+            </div>
         <div class="col col-sm-2">
 
         </div>

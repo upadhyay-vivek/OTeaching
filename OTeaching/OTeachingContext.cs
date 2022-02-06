@@ -17,5 +17,6 @@ namespace OTeaching
         public DbSet<Category>  Categories { get; set; }
         public DbSet<Staff> Staffs{ get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

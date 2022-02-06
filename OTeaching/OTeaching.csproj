@@ -144,17 +144,22 @@
     <Compile Include="EntityModels\Category.cs" />
     <Compile Include="EntityModels\Feedback.cs" />
     <Compile Include="EntityModels\Staff.cs" />
+    <Compile Include="EntityModels\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\FeedbackViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\StaffViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="OTeachingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\FeedbackRepository.cs" />
     <Compile Include="Repositories\StaffRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -507,11 +512,16 @@
     <Content Include="Views\Admin\UserReport.cshtml" />
     <Content Include="Views\Admin\UploadReport.cshtml" />
     <Content Include="Views\Admin\ListBranch.cshtml" />
+    <Content Include="Views\Admin\ViewFeedback.cshtml" />
+    <Content Include="Views\Student\Registration.cshtml" />
+    <Content Include="Views\Staff\MyProfile.cshtml" />
+    <Content Include="Views\Shared\_StaffLayout.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Student\MyProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Login\" />
-    <Folder Include="Views\Student\" />
+    <Folder Include="Uploads\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

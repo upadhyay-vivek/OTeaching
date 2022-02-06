@@ -4,7 +4,11 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
+<style>
+    table td {
+        vertical-align: middle !important;
+    }
+</style>
 <h2>STAFF REPORTS -</h2>
 <hr />
 
@@ -28,9 +32,10 @@
         <tbody>
             @foreach (var staff in Model)
             {
+                var imagePath = "/Uploads/Profile/" + staff.Image;
             <tr>
-                <td scope="row">@staff.Image</td>
-                <td>@staff.Name</td>
+                <td scope="row"> <img style="width:50px;height:50px" src="@imagePath" alt="Alternate Text" />  </td>
+                <td><span> @staff.Name</span></td>
                 <td>@staff.Mobile</td>
                 <td>@staff.Address</td>
                 <td>@staff.City</td>
@@ -38,7 +43,7 @@
                 <td>@staff.Qualification</td>
                 <td>@staff.Experience</td>
                 <td>@staff.CName</td>
-                <td><a href="#" onclick="deleteStaff(@staff.SID">Delete</a></td>
+                <td>@Html.ActionLink("Delete","DeleteStaff","Admin", routeValues:new { sid=staff.SID }, htmlAttributes: null)</td>
             </tr>
             }
         </tbody>
@@ -49,9 +54,4 @@ else
     <h3>There is no record found.</h3>
 }
 
-<script>
-    function deleteStaff(sid) {
-        $.ajax();
-    } 
-</script>
 
