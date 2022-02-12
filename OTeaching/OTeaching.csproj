@@ -144,15 +144,20 @@
     <Compile Include="EntityModels\Category.cs" />
     <Compile Include="EntityModels\Feedback.cs" />
     <Compile Include="EntityModels\Staff.cs" />
+    <Compile Include="EntityModels\StaffUploadFile.cs" />
+    <Compile Include="EntityModels\UploadVideo.cs" />
     <Compile Include="EntityModels\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
+    <Compile Include="EntityModels\Message.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\StaffUploadVideoViewModel.cs" />
     <Compile Include="Models\StaffViewModel.cs" />
+    <Compile Include="Models\StaffUplaodFileViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="OTeachingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -518,10 +523,18 @@
     <Content Include="Views\Shared\_StaffLayout.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Student\MyProfile.cshtml" />
+    <Content Include="Views\Staff\UploadFile.cshtml" />
+    <Content Include="Views\Staff\ListUploadFiles.cshtml" />
+    <Content Include="Views\Staff\Message.cshtml" />
+    <Content Include="Views\Staff\UploadPdf.cshtml" />
+    <Content Include="Views\Staff\ListUploadPdfs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\Profile\" />
+    <Folder Include="Uploads\Staff\Files\" />
+    <Folder Include="Uploads\Staff\Profiles\" />
+    <Folder Include="Uploads\Staff\Video\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<OTeaching.Models.StaffUplaodFileViewModel>
+@{
+    Layout = null;
+}
+
+@if (Model.Count() > 0)
+{
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+
+                <th>Title</th>
+                <th>File Name</th>
+                <th>Download</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+
+                <tr>
+                    <td>@category.Title</td>
+                    <td>@category.FilePath</td>
+                    <td>@category.Download</td>
+                    <td>
+                        @if (@category.Status.Equals("1"))
+                        {
+                            @Html.ActionLink("Active", "ChangeStatus", "Staff", new { status = false })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Active", "ChangeStatus", "Staff", new { status = false })
+                        }
+                </td>
+                <td>@Html.ActionLink("Delete", "DeleteUploadFile", "Staff",new { UID=category.UID})</td>
+            </tr>
+
+        }
+        <tbody>
+    </table>
+}

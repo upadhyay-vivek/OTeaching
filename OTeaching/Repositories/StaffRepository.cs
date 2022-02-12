@@ -74,9 +74,31 @@ namespace OTeaching.Repositories
             return 0;
         }
 
+        internal int AddUploadFile(UploadFile inputModel)
+        {
+            _oTeachingContext.UploadFiles.Add(inputModel);
+            var result = _oTeachingContext.SaveChanges();
+            return result;
+        }
+
+        internal object DeleteUploadFile(int uID)
+        {
+            throw new NotImplementedException();
+        }
+
         public Staff CheckStaff(string userName, string password)
         {
             return _oTeachingContext.Staffs.Where(x => x.Email == userName && x.Password==password).FirstOrDefault();
+        }
+
+        public List<UploadFile> GetAllUploadFiles()
+        {
+            return _oTeachingContext.UploadFiles.ToList();
+        }
+
+        public List<UploadVideo> GetAllUploadVideos()
+        {
+            return _oTeachingContext.UploadVideos.ToList();
         }
     }
 }

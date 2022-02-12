@@ -18,5 +18,8 @@ namespace OTeaching
         public DbSet<Staff> Staffs{ get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UploadFile> UploadFiles { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<UploadVideo> UploadVideos { get; set; }
     }
 }

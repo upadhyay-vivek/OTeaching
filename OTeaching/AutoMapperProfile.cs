@@ -19,6 +19,10 @@ namespace OTeaching
             CreateMap<CategoryViewModel, Category>();
             CreateMap<User, UserViewModel>();
             CreateMap<UserViewModel, User>();
+            CreateMap<UploadFile, StaffUplaodFileViewModel>();
+            CreateMap<StaffUplaodFileViewModel,UploadFile > ();
+            CreateMap<UploadVideo, StaffUploadVideoViewModel>();
+            CreateMap<StaffUploadVideoViewModel, UploadVideo>();
         }
     }
 }

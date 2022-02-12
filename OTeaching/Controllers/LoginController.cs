@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using OTeaching.EntityModels;
 using OTeaching.Models;
 using OTeaching.Repositories;
 using System;
@@ -39,15 +40,17 @@ namespace OTeaching.Controllers
             }
             else if(loginViewModel.Role=="1")
             {
-                if (ValidateStaffLogin(loginViewModel.UserName,loginViewModel.Password))
+                var staff = ValidateStaffLogin(loginViewModel.UserName, loginViewModel.Password);
+                if (staff!=null)
                 {
                     Session["role"] = "staff";
-                    return RedirectToAction("MyProfile", "Staff");
+                    return RedirectToAction("MyProfile", "Staff",new { sid=staff.SID});
                 }
             }
             else if(loginViewModel.Role=="2")
             {
-                if (ValidateStudentLogin(loginViewModel.UserName, loginViewModel.Password))
+                var user=ValidateStudentLogin(loginViewModel.UserName, loginViewModel.Password);
+                if(user!=null)
                 {
                     Session["role"] = "student";
                     return RedirectToAction("MyProfile", "Student");
@@ -57,20 +60,14 @@ namespace OTeaching.Controllers
             return View();
         }
 
-        private bool ValidateStaffLogin(string userName, string password)
+        private Staff ValidateStaffLogin(string userName, string password)
         {
-            if (_staffRepository.CheckStaff(userName, password) != null)
-                return true;
-            else
-                return false;
+            return _staffRepository.CheckStaff(userName, password);
         }
 
-        private bool ValidateStudentLogin(string userName, string password)
+        private User ValidateStudentLogin(string userName, string password)
         {
-            if (_userRepository.CheckStudent(userName, password) != null)
-                return true;
-            else
-                return false;
+            return _userRepository.CheckStudent(userName, password);
         }
 
         public ActionResult Logout()
